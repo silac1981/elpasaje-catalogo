@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oasis Animal · Accesorios para mascotas · El Pasaje 3D Studio</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://silac1981.github.io/elpasaje-catalogo/oasis-animal.html">
+<meta property="og:title"       content="Oasis Animal · Hecho con amor para ellos.">
+<meta property="og:description" content="Accesorios 3D para tu familia animal. Parte de cada venta va a refugios de Buenos Aires.">
+<meta property="og:image"       content="https://silac1981.github.io/elpasaje-catalogo/static/productos/oasis-animal/soporte_comedero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale"      content="es_AR">
+<meta name="twitter:card"       content="summary_large_image">
+<meta name="description"        content="Accesorios 3D para tu familia animal. Parte de cada venta va a refugios de Buenos Aires.">
+
+<!-- Fuentes design system -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --ink:     #16181F;
+  --ink-2:   #3A3E4A;
+  --paper:   #F4F1EC;
+  --paper-2: #EAE5DC;
+  --line:    #D8D2C6;
+  --muted:   #6E7180;
+  --ep:      #FF4B4B;
+  --wa:      #25D366;
+  --c:       #F472B6;   /* acento Oasis Animal — rosa ternura */
+
+  --disp: "Bricolage Grotesque", sans-serif;
+  --text: "Source Sans 3", system-ui, sans-serif;
+  --mono: "Source Code Pro", ui-monospace, monospace;
+
+  --r-card:       16px;
+  --r-ui:         9px;
+  --shadow-hover: 0 18px 40px rgba(22,24,31,.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+html { scroll-behavior: smooth }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 16px 40px;
+  background: rgba(244,241,236,.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; flex-shrink: 0 }
+.brand-mark {
+  width: 30px; height: 30px; border-radius: 7px;
+  background: var(--ep); display: grid; place-items: center;
+  font-family: var(--disp); font-weight: 800; font-size: 14px; color: #fff;
+}
+.brand-name { font-family: var(--disp); font-weight: 700; font-size: 15px; letter-spacing: -.02em; color: var(--muted) }
+.brand-name b { color: var(--ink) }
+
+.linea-badge {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--c);
+}
+.linea-badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); flex-shrink: 0 }
+
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--text); font-size: 13px; font-weight: 700;
+  color: #fff; background: var(--wa);
+  text-decoration: none; padding: 8px 18px; border-radius: var(--r-ui);
+  transition: opacity .18s; white-space: nowrap; flex-shrink: 0;
+}
+.btn-wa:hover { opacity: .88 }
+
+/* ── HERO ── */
+.hero {
+  max-width: 1200px; margin: 0 auto;
+  padding: 80px 40px 56px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.hero-copy {}
+.eyebrow {
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--c); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::after { content: ""; flex: 1; max-width: 48px; height: 1px; background: var(--c); opacity: .4 }
+
+.hero h1 {
+  font-family: var(--disp); font-weight: 800;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: .96; letter-spacing: -.03em; color: var(--ink);
+  margin-bottom: 24px;
+}
+.hero h1 em { font-style: normal; color: var(--c) }
+
+.hero p {
+  font-family: var(--text); font-size: 18px; color: var(--ink-2);
+  line-height: 1.6; margin-bottom: 32px; max-width: 460px;
+}
+
+.solidario {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: color-mix(in srgb, var(--c) 8%, #fff);
+  border: 1px solid color-mix(in srgb, var(--c) 25%, var(--line));
+  border-radius: 12px; padding: 14px 18px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+  color: var(--ink-2); max-width: 380px;
+}
+.solidario strong { color: var(--c); font-weight: 600 }
+.solidario-icon { font-size: 18px; flex-shrink: 0 }
+
+.hero-img {
+  border-radius: 20px; overflow: hidden;
+  aspect-ratio: 4/3;
+  background: color-mix(in srgb, var(--c) 6%, var(--paper));
+  border: 1px solid var(--line);
+}
+.hero-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s ease;
+}
+.hero-img:hover img { transform: scale(1.04) }
+
+/* ── CATÁLOGO ── */
+.catalogo {
+  max-width: 1200px; margin: 0 auto;
+  padding: 16px 40px 80px;
+}
+.cat-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 32px; gap: 16px; flex-wrap: wrap;
+  padding-bottom: 20px; border-bottom: 1px solid var(--line);
+}
+.cat-head h2 {
+  font-family: var(--disp); font-weight: 700;
+  font-size: clamp(20px, 2.8vw, 28px); letter-spacing: -.02em;
+}
+.cat-head .hint { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .1em }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ── CARD DE PRODUCTO ── */
+.card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--r-card); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s, border-color .22s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: color-mix(in srgb, var(--c) 35%, var(--line));
+}
+
+/* foto */
+.card-img {
+  aspect-ratio: 1/1; overflow: hidden; position: relative;
+  background: color-mix(in srgb, var(--c) 5%, var(--paper));
+}
+.card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s ease;
+}
+.card:hover .card-img img { transform: scale(1.06) }
+
+/* bandera de línea */
+.card-flag {
+  position: absolute; top: 12px; left: 12px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  background: var(--c); color: #fff;
+  padding: 4px 10px; border-radius: 6px;
+}
+/* SKU */
+.card-sku {
+  position: absolute; top: 12px; right: 12px;
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  background: #fff; color: var(--muted);
+  padding: 3px 8px; border-radius: 6px; letter-spacing: .06em;
+}
+
+/* body de la card */
+.card-body { padding: 18px 18px 16px; display: flex; flex-direction: column; flex: 1 }
+.card-name {
+  font-family: var(--disp); font-weight: 700;
+  font-size: 17px; letter-spacing: -.02em; color: var(--ink);
+  margin-bottom: 5px;
+}
+.card-spec {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  letter-spacing: .04em; margin-bottom: 16px; flex: 1;
+}
+.card-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-top: 14px; border-top: 1px solid var(--line);
+}
+.card-price {
+  font-family: var(--disp); font-weight: 700;
+  font-size: 20px; color: var(--c);
+}
+.card-cta {
+  font-family: var(--text); font-size: 13px; font-weight: 700;
+  color: #fff; background: var(--c);
+  text-decoration: none; padding: 8px 16px; border-radius: var(--r-ui);
+  transition: opacity .18s; white-space: nowrap;
+}
+.card-cta:hover { opacity: .88 }
+
+/* ── ARCO DEL PASAJE (separador) ── */
+.arco-sep {
+  max-width: 1200px; margin: 0 auto 0;
+  padding: 0 40px;
+  display: flex; align-items: center; gap: 24px;
+}
+.arco-sep svg { flex-shrink: 0; opacity: .18 }
+.arco-sep hr { flex: 1; border: none; border-top: 1px solid var(--line) }
+
+/* ── DIRECTORIO DE LÍNEAS ── */
+.directorio {
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  padding: 40px 40px;
+}
+.dir-inner { max-width: 1200px; margin: 0 auto }
+.dir-label {
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px;
+}
+.dir-chips { display: flex; gap: 8px; flex-wrap: wrap }
+.chip {
+  font-family: var(--text); font-size: 13px; font-weight: 600;
+  text-decoration: none; padding: 7px 14px; border-radius: 99px;
+  border: 1px solid var(--line); color: var(--muted);
+  background: #fff; transition: .18s; white-space: nowrap;
+}
+.chip:hover { color: var(--ink); border-color: var(--ink) }
+.chip.active { color: #fff; background: var(--c); border-color: var(--c) }
+
+/* ── SELLO ── */
+.sello {
+  text-align: center; padding: 20px 40px 36px;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--muted);
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+}
+.sello::before, .sello::after { content: ""; flex: 1; max-width: 60px; height: 1px; background: var(--line) }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--line); padding: 24px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  font-family: var(--text); font-size: 13px; color: var(--muted);
+}
+.footer-brand { font-family: var(--disp); font-weight: 700; font-size: 15px; color: var(--ink) }
+.footer-brand span { color: var(--ep) }
+.footer-links { display: flex; gap: 20px }
+.footer-links a { color: var(--muted); text-decoration: none; transition: color .18s }
+.footer-links a:hover { color: var(--c) }
+
+/* ── ANIMACIONES ── */
+@media (prefers-reduced-motion: no-preference) {
+  .card { opacity: 0; transform: translateY(16px); animation: rise .55s cubic-bezier(.2,.7,.2,1) forwards }
+  .card:nth-child(1) { animation-delay: .06s }
+  .card:nth-child(2) { animation-delay: .12s }
+  .card:nth-child(3) { animation-delay: .18s }
+  .card:nth-child(4) { animation-delay: .24s }
+  .card:nth-child(5) { animation-delay: .30s }
+  .card:nth-child(6) { animation-delay: .36s }
+  .card:nth-child(7) { animation-delay: .42s }
+  @keyframes rise { to { opacity:1; transform:translateY(0) } }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 40px }
+  .hero-img { max-width: 480px }
+}
+@media (max-width: 640px) {
+  .topbar { padding: 14px 20px }
+  .linea-badge { display: none }
+  .hero { padding: 56px 20px 40px }
+  .catalogo { padding: 12px 20px 64px }
+  .directorio { padding: 32px 20px }
+  .sello { padding: 16px 20px 28px }
+  footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px }
+}
+@media (max-width: 420px) {
+  .btn-wa span { display: none }
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">P</div>
+    <span class="brand-name"><b>El Pasaje</b> 3D Studio</span>
+  </a>
+
+  <div class="linea-badge" aria-hidden="true">Línea 04 · Oasis Animal</div>
+
+  <a class="btn-wa"
+     href="https://wa.me/5491165497234?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20de%20Oasis%20Animal%20y%20quiero%20consultar"
+     target="_blank" rel="noopener">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Línea 04 · Oasis Animal</div>
+    <h1>Hecho con amor<br><em>para ellos.</em></h1>
+    <p>Accesorios de diseño para tu familia animal. Cada pieza se fabrica a pedido en Buenos Aires, con materiales seguros y mucho cariño.</p>
+    <div class="solidario">
+      <span class="solidario-icon">🐾</span>
+      <span><strong>10 % de cada venta</strong> va directamente a refugios de Buenos Aires. Comprás y ayudás.</span>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="static/productos/oasis-animal/soporte_comedero.jpg"
+         alt="Soporte comedero Oasis Animal con huella de pata" loading="eager">
+  </div>
+</section>
+
+<!-- ── CATÁLOGO ── -->
+<section class="catalogo" id="catalogo">
+  <div class="cat-head">
+    <h2>Catálogo</h2>
+    <span class="hint">A pedido · entrega estimada 5–7 días hábiles</span>
+  </div>
+
+  <!-- Catálogo dinámico desde EPCC — se llena con JS desde exports/ -->
+  <div id="oa-catalog-json" style="margin-top:0;padding-top:0;">
+    <div id="oa-catalog-grid" class="grid"></div>
+  </div>
+</section>
+
+<!-- ── DIRECTORIO DE LÍNEAS ── -->
+<nav class="directorio" aria-label="Todas las líneas">
+  <div class="dir-inner">
+    <div class="dir-label">También en El Pasaje</div>
+    <div class="dir-chips">
+      <a class="chip" href="magnitud19.html">Línea 01 · Magnitud 19</a>
+      <a class="chip" href="sport.html">Línea 02 · F-Zone</a>
+      <a class="chip" href="coquette.html">Línea 03 · Coquette</a>
+      <a class="chip active" href="oasis-animal.html" aria-current="page">Línea 04 · Oasis Animal</a>
+      <a class="chip" href="oasis-estero.html">Línea 05 · Oasis del Estero</a>
+      <a class="chip" href="core-tech.html">Línea 06 · Core Tech</a>
+      <a class="chip" href="aero-tech.html">Línea 07 · Aviation Pro</a>
+      <a class="chip" href="pharma-delux.html">Línea 08 · Pharma DeLux</a>
+      <a class="chip" href="melomano.html">Línea 09 · Melómano</a>
+      <a class="chip" href="luminis.html">Línea 10 · Luminis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── SELLO ── -->
+<div class="sello" aria-hidden="true">hecho en Buenos Aires · a pedido</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <a class="footer-brand" href="index.html">El Pasaje <span>3D</span> Studio</a>
+  <nav class="footer-links" aria-label="Redes Oasis Animal">
+    <a href="https://wa.me/5491165497234?text=Hola%2C%20vi%20Oasis%20Animal" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.instagram.com/oasisanimal.3d" target="_blank" rel="noopener">Instagram</a>
+    <a href="index.html">← Todas las líneas</a>
+  </nav>
+  <span>Línea 04 · Oasis Animal</span>
+</footer>
+
+<script>
+/* Catalogo dinamico OA — carga desde exports/oasis-animal-catalog.json */
+(async function loadCatalogoOA() {
+  const wrap = document.getElementById('oa-catalog-json');
+  const grid = document.getElementById('oa-catalog-grid');
+  if (!wrap || !grid) return;
+  const WA = '5491165497234';
+  function fmt(n) { return new Intl.NumberFormat('es-AR').format(n); }
+  function waLink(nom, sku, precio) {
+    return `https://wa.me/${WA}?text=${encodeURIComponent(`Hola! Me interesa ${nom} (SKU: ${sku}) — $${fmt(precio)}. ¿Está disponible?`)}`;
+  }
+  try {
+    const r = await fetch('./exports/oasis-animal-catalog.json?v=' + Date.now());
+    if (!r.ok) return;
+    const data = await r.json();
+    const prods = [...(data.productos_3d || []), ...(data.productos_linea || [])];
+    if (!prods.length) return;
+    let html = '';
+    prods.forEach(p => {
+      const stk = p.stock > 0 ? `${p.stock} u` : 'A pedido';
+      const stkC = p.stock > 5 ? '#2F9E54' : (p.stock > 0 ? '#E0902A' : '#74798A');
+      const imgInner = p.imagen_url
+        ? `<img src="${p.imagen_url}" alt="${p.name}" loading="lazy">`
+        : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><span style="font-family:inherit;font-size:2rem;opacity:.4">🐾</span></div>`;
+      html += `<article class="card">
+  <div class="card-img">
+    ${imgInner}
+    <span class="card-flag">Oasis Animal</span>
+    <span class="card-sku">${p.sku}</span>
+  </div>
+  <div class="card-body">
+    <div class="card-name">${p.name}</div>
+    <div class="card-spec">${(p.description || '').substring(0, 80)}</div>
+    <div class="card-footer">
+      <span class="card-price">$ ${fmt(p.price)}</span>
+      <a class="card-cta" href="${waLink(p.name, p.sku, p.price)}" target="_blank" rel="noopener">Consultar</a>
+    </div>
+  </div>
+</article>`;
+    });
+    grid.innerHTML = html;
+  } catch (e) { /* JSON no disponible — fallback silencioso */ }
+})();
+</script>
+
+</body>
+</html>
