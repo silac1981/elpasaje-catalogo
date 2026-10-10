@@ -376,6 +376,32 @@ footer{padding:16px 64px;background:rgba(0,0,0,.7);border-top:1px solid var(--br
 </div>
 </div>
 
+<!-- GALERIA:INICIO (tools/galerias.py) -->
+<section class="epg" aria-label="Galería de productos">
+  <style>
+    .epg{max-width:1200px;margin:0 auto;padding:48px 16px}
+    .epg h2{margin:0 0 6px;font-size:clamp(1.4rem,4vw,2rem)}
+    .epg p.epg-sub{margin:0 0 20px;opacity:.75}
+    .epg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .epg-item{display:block;border-radius:14px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.08);
+              text-decoration:none;color:inherit;box-shadow:0 2px 10px rgba(0,0,0,.06);transition:transform .15s}
+    .epg-item:hover{transform:translateY(-2px);border-color:#C9A84C}
+    .epg-item img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#f4f4f4}
+    .epg-item span{display:block;padding:8px 10px;font-size:.82rem;line-height:1.3}
+    @media (min-width:700px){.epg-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+  </style>
+  <h2>Galería</h2>
+  <p class="epg-sub">Piezas reales, impresas en nuestro taller de Buenos Aires.</p>
+  <div class="epg-grid">
+    <a class="epg-item" href="static/web/magnitud19/calavera_negro_A.jpg" target="_blank" rel="noopener"><img src="static/web/magnitud19/calavera_negro_A.jpg" alt="Calavera paramétrica negra, vista lateral" loading="lazy" decoding="async"><span>Calavera paramétrica negra, vista lateral</span></a>
+    <a class="epg-item" href="static/web/magnitud19/calavera_violeta_frente.jpg" target="_blank" rel="noopener"><img src="static/web/magnitud19/calavera_violeta_frente.jpg" alt="Calavera paramétrica violeta, de frente" loading="lazy" decoding="async"><span>Calavera paramétrica violeta, de frente</span></a>
+    <a class="epg-item" href="static/web/magnitud19/calaveras_violeta_negro_A.jpg" target="_blank" rel="noopener"><img src="static/web/magnitud19/calaveras_violeta_negro_A.jpg" alt="Calaveras violeta y negra juntas" loading="lazy" decoding="async"><span>Calaveras violeta y negra juntas</span></a>
+    <a class="epg-item" href="static/web/magnitud19/calaveras_comparacion_A.jpg" target="_blank" rel="noopener"><img src="static/web/magnitud19/calaveras_comparacion_A.jpg" alt="Comparación de tamaños de las calaveras" loading="lazy" decoding="async"><span>Comparación de tamaños de las calaveras</span></a>
+    <a class="epg-item" href="static/web/magnitud19/calavera_violeta_atras.jpg" target="_blank" rel="noopener"><img src="static/web/magnitud19/calavera_violeta_atras.jpg" alt="Calavera violeta, vista posterior" loading="lazy" decoding="async"><span>Calavera violeta, vista posterior</span></a>
+    <a class="epg-item" href="static/web/magnitud19/calaveras_C.jpg" target="_blank" rel="noopener"><img src="static/web/magnitud19/calaveras_C.jpg" alt="Calaveras paramétricas en capas" loading="lazy" decoding="async"><span>Calaveras paramétricas en capas</span></a>
+  </div>
+</section>
+<!-- GALERIA:FIN -->
 <footer>
   <div class="fl">&#10022; &nbsp;<em>Magnitud 19</em> · El Pasaje 3D Studio</div>
   <div class="fr">Precisión para mentes que vuelan alto</div>
