@@ -3,472 +3,462 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oasis Animal · Accesorios para mascotas · El Pasaje 3D Studio</title>
+<title>Oasis Animal · Objetos que ayudan a rescatar · El Pasaje 3D Studio</title>
 
-<!-- Open Graph -->
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="https://silac1981.github.io/elpasaje-catalogo/oasis-animal.html">
-<meta property="og:title"       content="Oasis Animal · Hecho con amor para ellos.">
-<meta property="og:description" content="Accesorios 3D para tu familia animal. Parte de cada venta va a refugios de Buenos Aires.">
-<meta property="og:image"       content="https://silac1981.github.io/elpasaje-catalogo/static/productos/oasis-animal/soporte_comedero.jpg">
+<meta property="og:title"       content="Oasis Animal · Objetos que ayudan a rescatar">
+<meta property="og:description" content="Accesorios impresos en 3D en Buenos Aires para Oasis Animal. Parte de cada venta va al rescate.">
+<meta property="og:image"       content="https://silac1981.github.io/elpasaje-catalogo/static/img/oasisanimal_og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale"      content="es_AR">
 <meta name="twitter:card"       content="summary_large_image">
-<meta name="description"        content="Accesorios 3D para tu familia animal. Parte de cada venta va a refugios de Buenos Aires.">
+<meta name="description"        content="Accesorios impresos en 3D en Buenos Aires para Oasis Animal. Parte de cada venta va al rescate.">
+<meta name="theme-color"        content="#8FB67D">
 
-<!-- Fuentes design system -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..800,50..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
 
 <style>
-/* ── TOKENS ── */
-:root {
-  --ink:     #16181F;
-  --ink-2:   #3A3E4A;
-  --paper:   #F4F1EC;
-  --paper-2: #EAE5DC;
-  --line:    #D8D2C6;
-  --muted:   #6E7180;
-  --ep:      #FF4B4B;
-  --wa:      #25D366;
-  --c:       #F472B6;   /* acento Oasis Animal — rosa ternura */
+/* Marca Oasis Animal (Instagram @oasisanimal): verde salvia del logo, verde profundo de los textos "en adopción",
+   blanco y el marrón cálido de las mantas de las fotos. Serif pesada para los nombres, sans para el resto. */
+:root{
+  --salvia:#8FB67D; --salvia-2:#A9C99A; --salvia-claro:#E6EFDF; --salvia-tinta:#EEF4EA;
+  --bosque:#1E4535; --bosque-2:#2F5E4A; --tierra:#7A4B33; --crema:#FBFAF6; --linea:#D5E2CC;
+  --texto:#22302A; --suave:#5A6B61; --wa:#25D366;
+  --disp:"Fraunces", Georgia, "Times New Roman", serif;
+  --text:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crema);color:var(--texto);font-family:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--disp);font-variation-settings:"SOFT" 100;color:var(--bosque);line-height:1.05;text-wrap:balance}
+:focus-visible{outline:3px solid var(--bosque);outline-offset:3px;border-radius:6px}
 
-  --disp: "Bricolage Grotesque", sans-serif;
-  --text: "Source Sans 3", system-ui, sans-serif;
-  --mono: "Source Code Pro", ui-monospace, monospace;
+/* Barra */
+.top{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;min-width:0}
+.brand b{font-family:var(--disp);font-size:1.35rem;color:var(--bosque);font-weight:700;white-space:nowrap}
+.brand span{font-size:.82rem;color:var(--suave);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem;text-decoration:none;border-radius:999px;padding:11px 20px;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:17px;height:17px;flex:0 0 auto}
+.btn-wa{background:var(--bosque);color:#fff}
+.btn-wa:hover{background:var(--bosque-2)}
+.btn-claro{background:#fff;color:var(--bosque)}
+.btn-borde{border:1.5px solid var(--bosque);color:var(--bosque)}
+.top .btn{padding:9px 16px;font-size:.9rem}
 
-  --r-card:       16px;
-  --r-ui:         9px;
-  --shadow-hover: 0 18px 40px rgba(22,24,31,.12);
-}
+/* Portada */
+.hero{background:var(--salvia);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:64px 72px}
+.hero-txt{display:flex;flex-direction:column;gap:20px;min-width:0}
+.marca{font-family:var(--disp);color:#fff;font-size:1.05rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600}
+.hero h1{color:#fff;font-size:clamp(2.6rem,6.2vw,4.6rem);font-weight:800}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--bosque)}
+.hero p{color:#fff;font-size:1.12rem;max-width:34em}
+.hero .acciones{display:flex;flex-wrap:wrap;gap:12px}
+.hero-foto{position:relative;min-width:0}
+.hero-foto img{border-radius:28px;box-shadow:0 30px 60px rgba(30,69,53,.28)}
+.sello{position:absolute;left:-18px;bottom:-18px;background:var(--crema);color:var(--bosque);border-radius:999px;padding:12px 18px;font-weight:600;font-size:.92rem;box-shadow:0 10px 24px rgba(30,69,53,.18);display:flex;align-items:center;gap:8px}
+.sello svg{width:20px;height:20px;color:var(--salvia)}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { scroll-behavior: smooth }
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--text);
-  font-size: 17px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
+/* Feria */
+.feria{background:var(--bosque);color:#fff}
+.feria .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px;padding-block:28px}
+.feria h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);text-transform:uppercase;letter-spacing:.02em}
+.feria .dato{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:1rem;color:#DDEBD5}
+.feria .dato b{color:#fff}
+.feria .junto{font-family:var(--disp);font-style:italic;color:var(--salvia-2)}
 
-/* ── TOPBAR ── */
-.topbar {
-  position: sticky; top: 0; z-index: 50;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 16px 40px;
-  background: rgba(244,241,236,.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; flex-shrink: 0 }
-.brand-mark {
-  width: 30px; height: 30px; border-radius: 7px;
-  background: var(--ep); display: grid; place-items: center;
-  font-family: var(--disp); font-weight: 800; font-size: 14px; color: #fff;
-}
-.brand-name { font-family: var(--disp); font-weight: 700; font-size: 15px; letter-spacing: -.02em; color: var(--muted) }
-.brand-name b { color: var(--ink) }
+section.bloque{padding-block:80px}
+.cab{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:40em}
+.eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tierra);font-weight:600}
+.cab h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:750}
+.cab p{color:var(--suave);font-size:1.08rem}
 
-.linea-badge {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 11px; font-weight: 600;
-  letter-spacing: .18em; text-transform: uppercase; color: var(--c);
-}
-.linea-badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); flex-shrink: 0 }
+/* Producto estrella */
+.estrella{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.estrella-fotos{display:grid;grid-template-columns:2fr 1fr;gap:14px;min-width:0;align-items:start}
+.estrella-fotos img{border-radius:var(--r);width:100%;aspect-ratio:1;object-fit:cover}
+.estrella-fotos .chica{align-self:end}
+.estrella-txt{display:flex;flex-direction:column;gap:18px;min-width:0}
+.estrella-txt h3{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:750}
+.beneficios{list-style:none;display:flex;flex-direction:column;gap:14px}
+.beneficios li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.beneficios .ic{width:40px;height:40px;border-radius:50%;background:var(--salvia-claro);color:var(--bosque);display:grid;place-items:center}
+.beneficios .ic svg{width:20px;height:20px}
+.beneficios b{display:block;color:var(--bosque)}
+.beneficios span{color:var(--suave);font-size:.98rem}
+.precio-fila{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;padding-top:6px}
+.precio{font-family:var(--disp);font-size:2rem;color:var(--bosque);font-weight:700;font-variant-numeric:tabular-nums}
+.precio small{font-family:var(--text);font-size:.9rem;color:var(--suave);font-weight:400;display:block}
+.variantes{display:flex;flex-wrap:wrap;gap:8px}
+.variantes span{background:var(--salvia-tinta);border:1px solid var(--linea);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--bosque)}
 
-.btn-wa {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--text); font-size: 13px; font-weight: 700;
-  color: #fff; background: var(--wa);
-  text-decoration: none; padding: 8px 18px; border-radius: var(--r-ui);
-  transition: opacity .18s; white-space: nowrap; flex-shrink: 0;
-}
-.btn-wa:hover { opacity: .88 }
+/* Grilla de productos */
+.fondo-salvia{background:var(--salvia-tinta)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--linea);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(30,69,53,.12)}
+.card .fotos{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--linea)}
+.card .fotos.una{grid-template-columns:1fr}
+.card .fotos img{width:100%;aspect-ratio:1;object-fit:cover}
+.card .fotos.una img{aspect-ratio:2/1}
+.card-cuerpo{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:1.55rem;font-weight:700}
+.card p{color:var(--suave);font-size:.98rem}
+.card-pie{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.card-pie .p{font-family:var(--disp);font-size:1.35rem;color:var(--bosque);font-weight:700;font-variant-numeric:tabular-nums}
+.card-pie .p.consulta{font-family:var(--text);font-size:.95rem;font-weight:500;color:var(--suave)}
 
-/* ── HERO ── */
-.hero {
-  max-width: 1200px; margin: 0 auto;
-  padding: 80px 40px 56px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-}
-.hero-copy {}
-.eyebrow {
-  font-family: var(--mono); font-size: 11px; font-weight: 600;
-  letter-spacing: .22em; text-transform: uppercase;
-  color: var(--c); margin-bottom: 20px;
-  display: flex; align-items: center; gap: 12px;
-}
-.eyebrow::after { content: ""; flex: 1; max-width: 48px; height: 1px; background: var(--c); opacity: .4 }
+/* Adoptantes */
+.kits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.kit{border:1.5px solid var(--linea);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.kit.medio{border-color:var(--salvia);background:var(--salvia-tinta)}
+.kit h3{font-size:1.4rem;font-weight:700}
+.kit ul{list-style:none;display:flex;flex-direction:column;gap:6px;color:var(--suave);font-size:.96rem}
+.kit li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--salvia);margin-right:10px;vertical-align:2px}
+.kit .p{font-family:var(--disp);font-size:1.6rem;color:var(--bosque);font-weight:700;margin-top:auto;font-variant-numeric:tabular-nums}
+.kit a{align-self:flex-start}
 
-.hero h1 {
-  font-family: var(--disp); font-weight: 800;
-  font-size: clamp(36px, 5vw, 62px);
-  line-height: .96; letter-spacing: -.03em; color: var(--ink);
-  margin-bottom: 24px;
-}
-.hero h1 em { font-style: normal; color: var(--c) }
+/* A pedido */
+.pedido{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--linea)}
+.pedido div{padding:22px 20px 22px 0;border-bottom:1px solid var(--linea);display:flex;flex-direction:column;gap:4px;min-width:0}
+.pedido b{font-family:var(--disp);font-size:1.2rem;color:var(--bosque)}
+.pedido span{color:var(--suave);font-size:.95rem}
+.pedido em{font-style:normal;color:var(--tierra);font-weight:600;font-size:.95rem;font-variant-numeric:tabular-nums}
 
-.hero p {
-  font-family: var(--text); font-size: 18px; color: var(--ink-2);
-  line-height: 1.6; margin-bottom: 32px; max-width: 460px;
-}
+/* Cómo pedir */
+.pasos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;counter-reset:p}
+.paso{display:flex;flex-direction:column;gap:8px;counter-increment:p}
+.paso::before{content:counter(p);font-family:var(--disp);font-size:2.6rem;font-weight:800;color:var(--salvia);line-height:1}
+.paso b{font-size:1.1rem;color:var(--bosque)}
+.paso span{color:var(--suave)}
 
-.solidario {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: color-mix(in srgb, var(--c) 8%, #fff);
-  border: 1px solid color-mix(in srgb, var(--c) 25%, var(--line));
-  border-radius: 12px; padding: 14px 18px;
-  font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
-  color: var(--ink-2); max-width: 380px;
-}
-.solidario strong { color: var(--c); font-weight: 600 }
-.solidario-icon { font-size: 18px; flex-shrink: 0 }
+/* Cierre */
+.cierre{background:var(--salvia);text-align:left}
+.cierre .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-block:56px}
+.cierre h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);max-width:16em}
+.cierre h2 em{color:var(--bosque);font-style:italic}
+.cierre .acciones{display:flex;flex-wrap:wrap;gap:12px}
 
-.hero-img {
-  border-radius: 20px; overflow: hidden;
-  aspect-ratio: 4/3;
-  background: color-mix(in srgb, var(--c) 6%, var(--paper));
-  border: 1px solid var(--line);
-}
-.hero-img img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform .6s ease;
-}
-.hero-img:hover img { transform: scale(1.04) }
+.lineas{padding-block:36px;border-bottom:1px solid var(--linea)}
+.lineas p{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--suave);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{text-decoration:none;font-size:.86rem;padding:6px 13px;border:1px solid var(--linea);border-radius:999px;color:var(--suave);background:#fff}
+.chips a:hover{border-color:var(--salvia);color:var(--bosque)}
+.chips a[aria-current]{background:var(--bosque);border-color:var(--bosque);color:#fff}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;font-size:.9rem;color:var(--suave)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--bosque)}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
 
-/* ── CATÁLOGO ── */
-.catalogo {
-  max-width: 1200px; margin: 0 auto;
-  padding: 16px 40px 80px;
-}
-.cat-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 32px; gap: 16px; flex-wrap: wrap;
-  padding-bottom: 20px; border-bottom: 1px solid var(--line);
-}
-.cat-head h2 {
-  font-family: var(--disp); font-weight: 700;
-  font-size: clamp(20px, 2.8vw, 28px); letter-spacing: -.02em;
-}
-.cat-head .hint { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .1em }
+.wa-flot{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.2);z-index:30}
+.wa-flot svg{width:28px;height:28px}
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+@media (max-width:900px){
+  .hero .wrap,.estrella{grid-template-columns:1fr}
+  .hero .wrap{padding-block:44px 56px;gap:32px}
+  .kits,.pedido,.pasos{grid-template-columns:1fr 1fr}
 }
-
-/* ── CARD DE PRODUCTO ── */
-.card {
-  background: #fff; border: 1px solid var(--line);
-  border-radius: var(--r-card); overflow: hidden;
-  display: flex; flex-direction: column;
-  transition: transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s, border-color .22s;
+@media (max-width:620px){
+  .grid,.kits,.pedido,.pasos{grid-template-columns:1fr}
+  .brand span{display:none}
+  section.bloque{padding-block:56px}
+  .sello{left:12px;bottom:-14px}
+  .top .btn span{display:none}
 }
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: color-mix(in srgb, var(--c) 35%, var(--line));
-}
-
-/* foto */
-.card-img {
-  aspect-ratio: 1/1; overflow: hidden; position: relative;
-  background: color-mix(in srgb, var(--c) 5%, var(--paper));
-}
-.card-img img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform .5s ease;
-}
-.card:hover .card-img img { transform: scale(1.06) }
-
-/* bandera de línea */
-.card-flag {
-  position: absolute; top: 12px; left: 12px;
-  font-family: var(--mono); font-size: 10px; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase;
-  background: var(--c); color: #fff;
-  padding: 4px 10px; border-radius: 6px;
-}
-/* SKU */
-.card-sku {
-  position: absolute; top: 12px; right: 12px;
-  font-family: var(--mono); font-size: 10px; font-weight: 500;
-  background: #fff; color: var(--muted);
-  padding: 3px 8px; border-radius: 6px; letter-spacing: .06em;
-}
-
-/* body de la card */
-.card-body { padding: 18px 18px 16px; display: flex; flex-direction: column; flex: 1 }
-.card-name {
-  font-family: var(--disp); font-weight: 700;
-  font-size: 17px; letter-spacing: -.02em; color: var(--ink);
-  margin-bottom: 5px;
-}
-.card-spec {
-  font-family: var(--mono); font-size: 11px; color: var(--muted);
-  letter-spacing: .04em; margin-bottom: 16px; flex: 1;
-}
-.card-footer {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding-top: 14px; border-top: 1px solid var(--line);
-}
-.card-price {
-  font-family: var(--disp); font-weight: 700;
-  font-size: 20px; color: var(--c);
-}
-.card-cta {
-  font-family: var(--text); font-size: 13px; font-weight: 700;
-  color: #fff; background: var(--c);
-  text-decoration: none; padding: 8px 16px; border-radius: var(--r-ui);
-  transition: opacity .18s; white-space: nowrap;
-}
-.card-cta:hover { opacity: .88 }
-
-/* ── ARCO DEL PASAJE (separador) ── */
-.arco-sep {
-  max-width: 1200px; margin: 0 auto 0;
-  padding: 0 40px;
-  display: flex; align-items: center; gap: 24px;
-}
-.arco-sep svg { flex-shrink: 0; opacity: .18 }
-.arco-sep hr { flex: 1; border: none; border-top: 1px solid var(--line) }
-
-/* ── DIRECTORIO DE LÍNEAS ── */
-.directorio {
-  background: var(--paper-2);
-  border-top: 1px solid var(--line);
-  padding: 40px 40px;
-}
-.dir-inner { max-width: 1200px; margin: 0 auto }
-.dir-label {
-  font-family: var(--mono); font-size: 11px; font-weight: 600;
-  letter-spacing: .22em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 18px;
-}
-.dir-chips { display: flex; gap: 8px; flex-wrap: wrap }
-.chip {
-  font-family: var(--text); font-size: 13px; font-weight: 600;
-  text-decoration: none; padding: 7px 14px; border-radius: 99px;
-  border: 1px solid var(--line); color: var(--muted);
-  background: #fff; transition: .18s; white-space: nowrap;
-}
-.chip:hover { color: var(--ink); border-color: var(--ink) }
-.chip.active { color: #fff; background: var(--c); border-color: var(--c) }
-
-/* ── SELLO ── */
-.sello {
-  text-align: center; padding: 20px 40px 36px;
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: .22em; text-transform: uppercase; color: var(--muted);
-  display: flex; align-items: center; justify-content: center; gap: 16px;
-}
-.sello::before, .sello::after { content: ""; flex: 1; max-width: 60px; height: 1px; background: var(--line) }
-
-/* ── FOOTER ── */
-footer {
-  border-top: 1px solid var(--line); padding: 24px 40px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 20px; flex-wrap: wrap;
-  font-family: var(--text); font-size: 13px; color: var(--muted);
-}
-.footer-brand { font-family: var(--disp); font-weight: 700; font-size: 15px; color: var(--ink) }
-.footer-brand span { color: var(--ep) }
-.footer-links { display: flex; gap: 20px }
-.footer-links a { color: var(--muted); text-decoration: none; transition: color .18s }
-.footer-links a:hover { color: var(--c) }
-
-/* ── ANIMACIONES ── */
-@media (prefers-reduced-motion: no-preference) {
-  .card { opacity: 0; transform: translateY(16px); animation: rise .55s cubic-bezier(.2,.7,.2,1) forwards }
-  .card:nth-child(1) { animation-delay: .06s }
-  .card:nth-child(2) { animation-delay: .12s }
-  .card:nth-child(3) { animation-delay: .18s }
-  .card:nth-child(4) { animation-delay: .24s }
-  .card:nth-child(5) { animation-delay: .30s }
-  .card:nth-child(6) { animation-delay: .36s }
-  .card:nth-child(7) { animation-delay: .42s }
-  @keyframes rise { to { opacity:1; transform:translateY(0) } }
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; gap: 40px }
-  .hero-img { max-width: 480px }
-}
-@media (max-width: 640px) {
-  .topbar { padding: 14px 20px }
-  .linea-badge { display: none }
-  .hero { padding: 56px 20px 40px }
-  .catalogo { padding: 12px 20px 64px }
-  .directorio { padding: 32px 20px }
-  .sello { padding: 16px 20px 28px }
-  footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px }
-}
-@media (max-width: 420px) {
-  .btn-wa span { display: none }
-}
+.quienes{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.quienes .cab{margin-bottom:0}
+.ayudar{display:flex;flex-direction:column;gap:12px}
+.ayuda{display:flex;flex-direction:column;gap:2px;text-decoration:none;border:1.5px solid var(--linea);border-radius:var(--r);padding:16px 20px;background:#fff;transition:border-color .15s,transform .15s}
+.ayuda:hover{border-color:var(--salvia);transform:translateY(-2px)}
+.ayuda b{font-family:var(--disp);font-size:1.3rem;color:var(--bosque)}
+.ayuda span{color:var(--suave);font-size:.95rem}
+.estrella-fotos .col{display:flex;flex-direction:column;gap:14px}
+.tira{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:24px}
+.tira figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.tira img{border-radius:var(--r);width:100%;aspect-ratio:1;object-fit:cover}
+.tira figcaption{font-size:.92rem;color:var(--suave)}
+.guarde{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.guarde .cab{margin-bottom:0}
+@media (max-width:900px){.quienes{grid-template-columns:1fr}.tira{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<!-- ── TOPBAR ── -->
-<header class="topbar">
-  <a class="brand" href="index.html">
-    <div class="brand-mark">P</div>
-    <span class="brand-name"><b>El Pasaje</b> 3D Studio</span>
-  </a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41"/></symbol>
+  <symbol id="huella" viewBox="0 0 24 24"><path fill="currentColor" d="M12 13.5c-2.9 0-6 2.6-6 5.2 0 1.5 1.2 2.3 2.6 2.3 1.3 0 2.2-.7 3.4-.7s2.1.7 3.4.7c1.4 0 2.6-.8 2.6-2.3 0-2.6-3.1-5.2-6-5.2zM5.2 12.6c1.3-.3 1.9-1.9 1.5-3.4-.4-1.6-1.8-2.6-3-2.3-1.3.3-1.9 1.9-1.5 3.4.4 1.6 1.7 2.6 3 2.3zm13.6 0c1.3.3 2.6-.7 3-2.3.4-1.5-.2-3.1-1.5-3.4-1.2-.3-2.6.7-3 2.3-.4 1.5.2 3.1 1.5 3.4zM9 8.7c1.4 0 2.4-1.5 2.4-3.3S10.4 2 9 2 6.6 3.6 6.6 5.4 7.6 8.7 9 8.7zm6 0c1.4 0 2.4-1.5 2.4-3.3S16.4 2 15 2s-2.4 1.6-2.4 3.4 1 3.3 2.4 3.3z"/></symbol>
+</svg>
 
-  <div class="linea-badge" aria-hidden="true">Línea 04 · Oasis Animal</div>
-
-  <a class="btn-wa"
-     href="https://wa.me/5491169086959?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20de%20Oasis%20Animal%20y%20quiero%20consultar"
-     target="_blank" rel="noopener">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-    <span>WhatsApp</span>
-  </a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>Oasis Animal</b><span>× El Pasaje 3D Studio</span></a>
+    <a class="btn btn-wa" data-wa="Hola! Vi la página de Oasis Animal y quiero consultar" href="https://wa.me/5491169086959" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>Pedir por WhatsApp</span></a>
+  </div>
 </header>
 
-<!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-copy">
-    <div class="eyebrow">Línea 04 · Oasis Animal</div>
-    <h1>Hecho con amor<br><em>para ellos.</em></h1>
-    <p>Accesorios de diseño para tu familia animal. Cada pieza se fabrica a pedido en Buenos Aires, con materiales seguros y mucho cariño.</p>
-    <div class="solidario">
-      <span class="solidario-icon">🐾</span>
-      <span><strong>10 % de cada venta</strong> va directamente a refugios de Buenos Aires. Comprás y ayudás.</span>
+  <div class="wrap">
+    <div class="hero-txt">
+      <span class="marca">Oasis · Animal</span>
+      <h1>Objetos que <em>ayudan a rescatar.</em></h1>
+      <p>Accesorios para perros y gatos impresos en 3D en Buenos Aires, hechos junto a Oasis Animal, la red que cambia la vida de los animales que más lo necesitan en GBA Norte, Sur y CABA. Parte de cada venta va al rescate.</p>
+      <div class="acciones">
+        <a class="btn btn-claro" href="#productos">Ver los productos</a>
+        <a class="btn btn-claro" href="#guarderia">Guardería</a>
+        <a class="btn btn-wa" data-wa="Hola! Vi la página de Oasis Animal y quiero hacer un pedido" href="https://wa.me/5491169086959" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Pedir por WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-foto">
+      <img src="static/web/oasis-animal/estacion_colores.jpg" alt="Estaciones por niveles en verde y marrón con Oasis grabado" width="1000" height="1000">
+      <span class="sello"><svg aria-hidden="true"><use href="#huella"/></svg>Cada compra suma al rescate</span>
     </div>
   </div>
-
-  <div class="hero-img">
-    <img src="static/productos/oasis-animal/soporte_comedero.jpg"
-         alt="Soporte comedero Oasis Animal con huella de pata" loading="eager">
-  </div>
 </section>
 
-<!-- ── CATÁLOGO ── -->
-<section class="catalogo" id="catalogo">
-  <div class="cat-head">
-    <h2>Catálogo</h2>
-    <span class="hint">A pedido · entrega estimada 5–7 días hábiles</span>
-  </div>
-
-  <!-- Catálogo dinámico desde EPCC — se llena con JS desde exports/ -->
-  <div id="oa-catalog-json" style="margin-top:0;padding-top:0;">
-    <div id="oa-catalog-grid" class="grid"></div>
-  </div>
-</section>
-
-<!-- ── DIRECTORIO DE LÍNEAS ── -->
-<nav class="directorio" aria-label="Todas las líneas">
-  <div class="dir-inner">
-    <div class="dir-label">También en El Pasaje</div>
-    <div class="dir-chips">
-      <a class="chip" href="magnitud19.html">Línea 01 · Magnitud 19</a>
-      <a class="chip" href="sport.html">Línea 02 · F-Zone</a>
-      <a class="chip" href="coquette.html">Línea 03 · Coquette</a>
-      <a class="chip active" href="oasis-animal.html" aria-current="page">Línea 04 · Oasis Animal</a>
-      <a class="chip" href="oasis-estero.html">Línea 05 · Oasis del Estero</a>
-      <a class="chip" href="core-tech.html">Línea 06 · Core Tech</a>
-      <a class="chip" href="aero-tech.html">Línea 07 · Aviation Pro</a>
-      <a class="chip" href="pharma-delux.html">Línea 08 · Pharma DeLux</a>
-      <a class="chip" href="melomano.html">Línea 09 · Melómano</a>
-      <a class="chip" href="luminis.html">Línea 10 · Luminis</a>
+<aside class="feria" id="feria" aria-label="Feria Solidaria">
+  <div class="wrap">
+    <div>
+      <h2>Feria Solidaria + Jornada de Adopción</h2>
+      <span class="junto">junto a Che Galgo · edición Halloween</span>
     </div>
+    <div class="dato"><span><b>Domingo 1 de noviembre</b></span><span><b>Parque Saavedra</b></span><span>13:30 a 18:30</span><span>Traé a tu perro disfrazado</span></div>
   </div>
-</nav>
+</aside>
 
-<!-- ── SELLO ── -->
-<div class="sello" aria-hidden="true">hecho en Buenos Aires · a pedido</div>
+<main>
+  <section class="bloque" id="oasis">
+    <div class="wrap quienes">
+      <div class="cab">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2>Cambiamos la vida de los que más lo necesitan</h2>
+        <p>Oasis Animal es una red de rescate en GBA Norte, Sur y CABA. Rescatamos, cuidamos y buscamos familia para perros, muchos de ellos galgos, junto a Che Galgo. Estos objetos los diseñamos e imprimimos con El Pasaje 3D Studio para sostener ese trabajo: cada compra suma al rescate.</p>
+      </div>
+      <div class="ayudar">
+        <a class="ayuda" href="https://docs.google.com/forms/d/e/1FAIpQLSeOYTZZf-9TtP83j68frmckDlhKfQGJvCNLG9rzQfSDtobUcw/viewform" target="_blank" rel="noopener"><b>Adoptá</b><span>Completá el formulario de adopción</span></a>
+        <a class="ayuda" href="https://link.mercadopago.com.ar/rescatesoasis" target="_blank" rel="noopener"><b>Doná</b><span>Por Mercado Pago, para los rescates</span></a>
+        <a class="ayuda" href="https://cafecito.app/oasisanimal" target="_blank" rel="noopener"><b>Invitá un cafecito</b><span>Un aporte chico que ayuda mucho</span></a>
+      </div>
+    </div>
+  </section>
 
-<!-- ── FOOTER ── -->
-<!-- GALERIA:INICIO (tools/galerias.py) -->
-<section class="epg" aria-label="Galería de productos">
-  <style>
-    .epg{max-width:1200px;margin:0 auto;padding:48px 16px}
-    .epg h2{margin:0 0 6px;font-size:clamp(1.4rem,4vw,2rem)}
-    .epg p.epg-sub{margin:0 0 20px;opacity:.75}
-    .epg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
-    .epg-item{display:block;border-radius:14px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.08);
-              text-decoration:none;color:inherit;box-shadow:0 2px 10px rgba(0,0,0,.06);transition:transform .15s}
-    .epg-item:hover{transform:translateY(-2px);border-color:#F472B6}
-    .epg-item img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#f4f4f4}
-    .epg-item span{display:block;padding:8px 10px;font-size:.82rem;line-height:1.3}
-    @media (min-width:700px){.epg-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
-  </style>
-  <h2>Galería</h2>
-  <p class="epg-sub">Piezas reales, impresas en nuestro taller de Buenos Aires.</p>
-  <div class="epg-grid">
-    <a class="epg-item" href="static/web/oasis-animal/perrito_globo_1.jpg" target="_blank" rel="noopener"><img src="static/web/oasis-animal/perrito_globo_1.jpg" alt="Llavero Perrito Globo" loading="lazy" decoding="async"><span>Llavero Perrito Globo</span></a>
-    <a class="epg-item" href="static/web/oasis-animal/perrito_globo_2.jpg" target="_blank" rel="noopener"><img src="static/web/oasis-animal/perrito_globo_2.jpg" alt="Llavero Perrito Globo, detalle" loading="lazy" decoding="async"><span>Llavero Perrito Globo, detalle</span></a>
-    <a class="epg-item" href="static/web/oasis-animal/soporte_comedero.jpg" target="_blank" rel="noopener"><img src="static/web/oasis-animal/soporte_comedero.jpg" alt="Soporte de comedero Patita" loading="lazy" decoding="async"><span>Soporte de comedero Patita</span></a>
-    <a class="epg-item" href="static/web/oasis-animal/soporte_comedero_cruz.jpg" target="_blank" rel="noopener"><img src="static/web/oasis-animal/soporte_comedero_cruz.jpg" alt="Pata del soporte de comedero, grabada" loading="lazy" decoding="async"><span>Pata del soporte de comedero, grabada</span></a>
-  </div>
-</section>
-<!-- GALERIA:FIN -->
-<footer>
-  <a class="footer-brand" href="index.html">El Pasaje <span>3D</span> Studio</a>
-  <nav class="footer-links" aria-label="Redes Oasis Animal">
-    <a href="https://wa.me/5491169086959?text=Hola%2C%20vi%20Oasis%20Animal" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://www.instagram.com/oasisanimal.3d" target="_blank" rel="noopener">Instagram</a>
-    <a href="index.html">← Todas las líneas</a>
+  <section class="bloque fondo-salvia">
+    <div class="wrap">
+      <div class="cab">
+        <span class="eyebrow">El producto estrella</span>
+        <h2>Estación por niveles</h2>
+        <p>Un comedero elevado hecho de anillos que se apilan: sumás o sacás niveles hasta la altura justa para tu perro, y crece con él. Con Oasis grabado en la base.</p>
+      </div>
+      <div class="estrella">
+        <div class="estrella-fotos">
+          <img src="static/web/oasis-animal/estacion_beige.jpg" alt="Estación por niveles beige de cuatro anillos con Oasis grabado" loading="lazy" width="1000" height="1000">
+          <div class="col">
+            <img src="static/web/oasis-animal/estacion_verde.jpg" alt="Estación por niveles en verde y beige" loading="lazy" width="1000" height="1000">
+            <img src="static/web/oasis-animal/estacion_azul.jpg" alt="Estaciones por niveles en azul y gris" loading="lazy" width="1000" height="1000">
+          </div>
+        </div>
+        <div class="estrella-txt">
+          <ul class="beneficios">
+            <li><span class="ic"><svg aria-hidden="true"><use href="#huella"/></svg></span><div><b>Mejora la postura</b><span>Menos tensión en el cuello y las articulaciones al comer.</span></div></li>
+            <li><span class="ic"><svg aria-hidden="true"><use href="#huella"/></svg></span><div><b>Ayuda a la digestión</b><span>Comer a la altura justa ayuda a prevenir problemas gástricos.</span></div></li>
+            <li><span class="ic"><svg aria-hidden="true"><use href="#huella"/></svg></span><div><b>Crece con él</b><span>Empezás con la base y sumás anillos cuando hace falta.</span></div></li>
+          </ul>
+          <div class="variantes"><span>Beige</span><span>Verde salvia</span><span>Gris</span><span>Azul</span><span>Combinados</span></div>
+          <div class="precio-fila">
+            <div class="precio">$ 8.000<small>la base · cada nivel extra $ 10.000</small></div>
+            <a class="btn btn-wa" data-wa="Hola! Quiero la estación por niveles de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>La quiero</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="productos">
+    <div class="wrap">
+      <div class="cab">
+        <span class="eyebrow">Para comer</span>
+        <h2>Comederos elevados</h2>
+        <p>Con cuenco de acero inoxidable que se saca para lavar. En el color que elijas.</p>
+      </div>
+      <div class="tira">
+        <figure><img src="static/web/oasis-animal/comedero_salvia.jpg" alt="Comedero elevado verde salvia con Oasis grabado y cuenco de acero" loading="lazy" width="1000" height="1000"><figcaption>Verde salvia con Oasis</figcaption></figure>
+        <figure><img src="static/web/oasis-animal/comedero_hueso.jpg" alt="Comedero elevado turquesa con un hueso calado" loading="lazy" width="1000" height="1000"><figcaption>Turquesa con hueso</figcaption></figure>
+        <figure><img src="static/web/oasis-animal/comedero_gris.jpg" alt="Comedero elevado gris y negro" loading="lazy" width="1000" height="1000"><figcaption>Gris y negro</figcaption></figure>
+        <figure><img src="static/web/oasis-animal/soporte_comedero_oasis.jpg" alt="Soporte de comedero con cuenco de cerámica con una huella" loading="lazy" width="1200" height="1200"><figcaption>Soporte con cuenco Patita</figcaption></figure>
+      </div>
+      <div class="precio-fila">
+        <div class="precio">$ 9.000<small>cada uno, a pedido</small></div>
+        <a class="btn btn-wa" data-wa="Hola! Quiero un comedero elevado de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Elegir el mío</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque fondo-salvia">
+    <div class="wrap">
+      <div class="cab">
+        <span class="eyebrow">Para el paseo</span>
+        <h2>Bolsitas siempre a mano</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="fotos">
+            <img src="static/web/oasis-animal/dispensador_trio.jpg" alt="Tres dispensadores de bolsitas con corazones en relieve" loading="lazy" width="1000" height="1000">
+            <img src="static/web/oasis-animal/dispensador_llavero.jpg" alt="Dispensador negro con llavero Oasis Animal" loading="lazy" width="1000" height="1000">
+          </div>
+          <div class="card-cuerpo">
+            <h3>Dispensador de bolsitas</h3>
+            <p>Se cuelga de la correa con su llavero. Texturas de corazones o facetas, y la etiqueta Oasis Animal.</p>
+            <div class="card-pie"><span class="p consulta">Consultá colores y precio</span>
+              <a class="btn btn-borde" data-wa="Hola! Quiero el dispensador de bolsitas de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Consultar</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="fotos">
+            <img src="static/web/oasis-animal/clip_dispensador_A_oasis.jpg" alt="Clip para bolsitas con la marca Oasis Animal" loading="lazy" width="1200" height="1200">
+            <img src="static/web/oasis-animal/dispensador_colores.jpg" alt="Dispensadores facetados en colores" loading="lazy" width="1000" height="1000">
+          </div>
+          <div class="card-cuerpo">
+            <h3>Clip para bolsitas</h3>
+            <p>Se engancha a la correa y sostiene el rollo. Liviano, con Oasis Animal en relieve.</p>
+            <div class="card-pie"><span class="p consulta">Consultá colores y precio</span>
+              <a class="btn btn-borde" data-wa="Hola! Quiero el clip para bolsitas de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Consultar</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="wrap">
+      <div class="cab">
+        <span class="eyebrow">Para jugar y regalar</span>
+        <h2>Lo que más sale en la feria</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="fotos una"><img src="static/web/oasis-animal/perritos_colores.jpg" alt="Llaveros perrito globo en muchos colores" loading="lazy" width="1000" height="1000"></div>
+          <div class="card-cuerpo">
+            <h3>Llavero perrito globo</h3>
+            <p>El perrito de globo en colores que brillan. Para regalar, o para llevar a tu perro en las llaves.</p>
+            <div class="card-pie"><span class="p consulta">Consultá colores y precio</span>
+              <a class="btn btn-borde" data-wa="Hola! Quiero llaveros perrito globo de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Consultar</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="fotos una"><img src="static/web/oasis-animal/pelota_huella.jpg" alt="Pelota con huellas caladas en fucsia y blanco" loading="lazy" width="1000" height="1000"></div>
+          <div class="card-cuerpo">
+            <h3>Pelota con huellas</h3>
+            <p>Pelota calada con huellas. Para jugar en casa o en la plaza.</p>
+            <div class="card-pie"><span class="p consulta">Consultá colores y precio</span>
+              <a class="btn btn-borde" data-wa="Hola! Quiero la pelota con huellas de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Consultar</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque fondo-salvia">
+    <div class="wrap">
+      <div class="cab">
+        <span class="eyebrow">Para quien adopta</span>
+        <h2>Kits de bienvenida</h2>
+        <p>Para los primeros días en casa. Un regalo para quien adopta, o para la familia que recibe a un nuevo integrante.</p>
+      </div>
+      <div class="kits">
+        <div class="kit"><h3>Esencial</h3><ul><li>Chapita de identificación con QR</li><li>Bandeja oval S</li><li>Tarjeta de bienvenida</li><li>Guía de los primeros 7 días</li></ul><div class="p">$ 15.000</div>
+          <a class="btn btn-borde" data-wa="Hola! Quiero el Kit de bienvenida Esencial de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Pedir</a></div>
+        <div class="kit medio"><h3>Completo</h3><ul><li>Todo el Esencial</li><li>Llavero perrito globo</li><li>Comedero elevado</li><li>Snack</li></ul><div class="p">$ 28.000</div>
+          <a class="btn btn-wa" data-wa="Hola! Quiero el Kit de bienvenida Completo de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Pedir</a></div>
+        <div class="kit"><h3>Premium</h3><ul><li>Todo el Completo</li><li>Estación por niveles</li><li>Caja con su nombre</li><li>Certificado de adopción</li></ul><div class="p">$ 45.000</div>
+          <a class="btn btn-borde" data-wa="Hola! Quiero el Kit de bienvenida Premium de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener">Pedir</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="guarderia">
+    <div class="wrap guarde">
+      <div class="cab">
+        <span class="eyebrow">Servicio</span>
+        <h2>Guardería Oasis</h2>
+        <p>¿Te vas de viaje o pasás el día afuera? Dejá a tu perro con quienes cuidan animales todos los días. Consultanos fechas, zona y condiciones por WhatsApp.</p>
+      </div>
+      <a class="btn btn-wa" data-wa="Hola! Quiero consultar por la guardería de Oasis Animal" href="https://wa.me/5491169086959" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Consultar la guardería</a>
+    </div>
+  </section>
+
+  <section class="bloque fondo-salvia">
+    <div class="wrap">
+      <div class="cab">
+        <span class="eyebrow">También a pedido</span>
+        <h2>Se hacen a medida</h2>
+        <p>Te mandamos fotos de muestras por WhatsApp antes de imprimir.</p>
+      </div>
+      <div class="pedido">
+        <div><b>Chapita con QR de emergencia</b><span>Con sus datos de contacto, por si se pierde.</span><em>$ 800</em></div>
+        <div><b>Litofanía con su foto</b><span>Su foto aparece al trasluz. Un recuerdo para siempre.</span><em>$ 35.000</em></div>
+        <div><b>Llavero con su nombre</b><span>Con el nombre de tu perro y el galgo de Oasis.</span><em>consultar</em></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="wrap">
+      <div class="cab"><span class="eyebrow">Cómo pedir</span><h2>Tres pasos</h2></div>
+      <div class="pasos">
+        <div class="paso"><b>Escribinos por WhatsApp</b><span>Contanos qué producto querés y para quién es.</span></div>
+        <div class="paso"><b>Elegí color y nombre</b><span>Te mostramos las opciones y te confirmamos el precio.</span></div>
+        <div class="paso"><b>Lo imprimimos</b><span>Entre 5 y 7 días hábiles. Coordinamos la entrega por WhatsApp.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <div class="wrap">
+      <h2>Vos también podés ser parte. <em>Cada pieza suma.</em></h2>
+      <div class="acciones">
+        <a class="btn btn-wa" data-wa="Hola! Vi la página de Oasis Animal y quiero hacer un pedido" href="https://wa.me/5491169086959" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Pedir por WhatsApp</a>
+        <a class="btn btn-claro" href="https://www.instagram.com/oasisanimal/" target="_blank" rel="noopener">Seguí a @oasisanimal</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lineas"><div class="wrap">
+  <p>También en El Pasaje</p>
+  <nav class="chips" aria-label="Otras líneas">
+    <a href="magnitud19.html">Magnitud 19</a><a href="sport.html">F-Zone</a><a href="coquette.html">Coquette</a>
+    <a href="oasis-animal.html" aria-current="page">Oasis Animal</a><a href="oasis-estero.html">Oasis del Estero</a>
+    <a href="core-tech.html">Core Tech</a><a href="aero-tech.html">Aviation Pro</a><a href="pharma-delux.html">Pharma DeLux</a>
+    <a href="melomano.html">Melómano</a><a href="luminis.html">Luminis</a>
   </nav>
-  <span>Línea 04 · Oasis Animal</span>
-</footer>
+</div></div>
+
+<footer><div class="wrap">
+  <a href="index.html">Hecho en Buenos Aires por <b>El Pasaje 3D Studio</b></a>
+  <nav><a href="https://www.instagram.com/oasisanimal/" target="_blank" rel="noopener">Instagram de Oasis</a><a href="index.html">Todas las líneas</a></nav>
+</div></footer>
+
+<a class="wa-flot" data-wa="Hola! Vi la página de Oasis Animal y quiero consultar" href="https://wa.me/5491169086959" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
 
 <script>
-/* Catalogo dinamico OA — carga desde exports/oasis-animal-catalog.json */
-(async function loadCatalogoOA() {
-  const wrap = document.getElementById('oa-catalog-json');
-  const grid = document.getElementById('oa-catalog-grid');
-  if (!wrap || !grid) return;
-  const WA = '5491169086959';
-  function fmt(n) { return new Intl.NumberFormat('es-AR').format(n); }
-  function waLink(nom, sku, precio) {
-    return `https://wa.me/${WA}?text=${encodeURIComponent(`Hola! Me interesa ${nom} (SKU: ${sku}) — $${fmt(precio)}. ¿Está disponible?`)}`;
-  }
-  try {
-    const r = await fetch('./exports/oasis-animal-catalog.json?v=' + Date.now());
-    if (!r.ok) return;
-    const data = await r.json();
-    const prods = [...(data.productos_3d || []), ...(data.productos_linea || [])];
-    if (!prods.length) return;
-    let html = '';
-    prods.forEach(p => {
-      const stk = p.stock > 0 ? `${p.stock} u` : 'A pedido';
-      const stkC = p.stock > 5 ? '#2F9E54' : (p.stock > 0 ? '#E0902A' : '#74798A');
-      const imgInner = p.imagen_url
-        ? `<img src="${p.imagen_url}" alt="${p.name}" loading="lazy">`
-        : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><span style="font-family:inherit;font-size:2rem;opacity:.4">🐾</span></div>`;
-      html += `<article class="card">
-  <div class="card-img">
-    ${imgInner}
-    <span class="card-flag">Oasis Animal</span>
-    <span class="card-sku">${p.sku}</span>
-  </div>
-  <div class="card-body">
-    <div class="card-name">${p.name}</div>
-    <div class="card-spec">${(p.description || '').substring(0, 80)}</div>
-    <div class="card-footer">
-      <span class="card-price">$ ${fmt(p.price)}</span>
-      <a class="card-cta" href="${waLink(p.name, p.sku, p.price)}" target="_blank" rel="noopener">Consultar</a>
-    </div>
-  </div>
-</article>`;
-    });
-    grid.innerHTML = html;
-  } catch (e) { /* JSON no disponible — fallback silencioso */ }
-})();
+/* Un solo número para toda la página: lo maneja Agustina (Oasis). */
+const WA = '5491169086959';
+document.querySelectorAll('[data-wa]').forEach(a => {
+  a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.wa)}`;
+});
+/* El aviso de la feria se oculta solo cuando pasa el domingo 1/11 */
+if (new Date() > new Date('2026-11-01T19:00:00-03:00')) document.getElementById('feria').hidden = true;
 </script>
-
 </body>
 </html>
