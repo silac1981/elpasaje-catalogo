@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasado por Roble · El Pasaje 3D Studio</title>
+
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://silac1981.github.io/elpasaje-catalogo/pasado-por-roble.html">
+<meta property="og:title"       content="Pasado por Roble · Cajas de relojes y portapipas">
+<meta property="og:description" content="Objetos para el ritual del buen tiempo: caja para 12 relojes y portapipas, impresos en 3D a pedido en Buenos Aires.">
+<meta property="og:image"       content="https://silac1981.github.io/elpasaje-catalogo/static/web/pasado-por-roble/caja_roble_horizontal.jpg">
+<meta property="og:locale"      content="es_AR">
+<meta name="twitter:card"       content="summary_large_image">
+<meta name="description"        content="Objetos para el ritual del buen tiempo: caja para 12 relojes y portapipas, impresos en 3D a pedido en Buenos Aires.">
+<meta name="theme-color"        content="#2A1A10">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Pasado por Roble: el marrón del roble oscuro de las fotos, el negro del PLA y el dorado de los marcos.
+   Misma tipografía que la portada (marca madre), paleta propia de la línea. */
+:root{
+  --roble:#2A1A10; --roble-2:#3A2616; --cuero:#6B4A2E; --oro:#C9A24A; --oro-texto:#7A5A14;
+  --papel:#F6F3EE; --linea:#DDD5C9; --texto:#22180F; --suave:#5E5247; --wa:#25D366;
+  --disp:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --text:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--papel);color:var(--texto);font-family:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.02;text-wrap:balance}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:4px}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(42,26,16,.95);backdrop-filter:blur(10px);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.volver{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:.92rem;color:#E8DCC8;min-height:44px}
+.volver img{width:34px;height:34px;border-radius:50%;background:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.98rem;text-decoration:none;border-radius:999px;padding:13px 22px;min-height:44px;transition:background-color .15s}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.btn-wa{background:var(--wa);color:#0B2E17}
+.btn-wa:hover{background:#3BE07A}
+.top .btn{padding:9px 16px;font-size:.92rem;min-height:40px}
+
+.hero{background:var(--roble);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding-block:56px 64px}
+.hero h1{font-size:clamp(3rem,7vw,5.4rem);font-weight:500;color:#fff}
+.hero h1 i{color:var(--oro)}
+.hero p{color:#E0D4C2;font-size:1.1rem;max-width:30rem;margin:20px 0 30px}
+.hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px}
+
+.bloque{padding-block:72px}
+.bloque h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}
+.bajada{color:var(--suave);max-width:40rem;margin-bottom:40px}
+
+.producto{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:start;padding-block:40px;border-top:1px solid var(--linea)}
+.producto:first-of-type{border-top:0;padding-top:0}
+.producto.invertido .fotos{order:2}
+.fotos{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+.fotos img{width:100%;height:100%;object-fit:cover;border-radius:6px;background:var(--roble)}
+.fotos .grande{grid-row:span 2;aspect-ratio:4/5}
+.fotos .chica{aspect-ratio:4/5}
+.fotos.horizontal{grid-template-columns:1fr}
+.fotos.horizontal img{aspect-ratio:16/10}
+.producto h3{font-size:2.2rem}
+.producto .que{color:var(--suave);margin:10px 0 18px;max-width:32rem}
+.datos{list-style:none;border-top:1px solid var(--linea);margin-bottom:22px}
+.datos li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--linea);font-size:.95rem}
+.datos li span:first-child{color:var(--suave)}
+.datos li span:last-child{text-align:right;font-weight:500}
+.nota{font-size:.86rem;color:var(--suave);margin-top:12px}
+.btn-roble{background:var(--roble);color:#fff}
+.btn-roble:hover{background:var(--roble-2)}
+
+.ritual{background:var(--roble);color:#E0D4C2}
+.ritual h2{color:#fff}
+.ritual .bajada{color:#CDBFA9}
+.ideas{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ideas li{border-top:1px solid rgba(201,162,74,.5);padding-top:14px}
+.ideas b{display:block;font-family:var(--disp);font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:4px}
+
+.cierre{text-align:center;padding-block:64px}
+.cierre h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:12px}
+.cierre p{color:var(--suave);margin-bottom:26px}
+footer{background:var(--roble);color:#BFB09A;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-block:24px}
+footer a{color:#EFE6D8;text-decoration:none}
+footer a:hover{color:var(--oro)}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:26px;padding-block:34px 44px}
+  .hero img{order:-1}
+  .producto{grid-template-columns:1fr;gap:22px}
+  .producto.invertido .fotos{order:0}
+  .ideas{grid-template-columns:1fr}
+  .bloque{padding-block:52px}
+}
+@media (max-width:420px){ .top .btn span{display:none} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="volver" href="index.html"><img src="static/img/marca/logo-elpasaje.png" alt="" width="34" height="34">Todas las líneas</a>
+    <a class="btn btn-wa" href="https://wa.me/5491165497234?text=Hola%2C%20vi%20Pasado%20por%20Roble%20en%20el%20cat%C3%A1logo%20y%20quiero%20consultar" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0z"/></svg>
+      <span>Consultar</span>
+    </a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="titulo">
+  <div class="wrap">
+    <div>
+      <h1 id="titulo">Pasado <i>por</i> Roble</h1>
+      <p>Objetos para el ritual del buen tiempo: guardar los relojes, apoyar las pipas, tener todo a la vista. Impresos en negro con detalles dorados, a pedido.</p>
+      <a class="btn btn-wa" href="https://wa.me/5491165497234?text=Hola%2C%20vi%20Pasado%20por%20Roble%20en%20el%20cat%C3%A1logo%20y%20quiero%20consultar" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    </div>
+    <img src="static/web/pasado-por-roble/caja_roble_horizontal.jpg" alt="Caja negra para 12 relojes con marco dorado y tapa de vidrio, sobre madera oscura" width="1400" height="875" fetchpriority="high">
+  </div>
+</section>
+
+<section class="bloque" id="productos" aria-labelledby="t-prod">
+  <div class="wrap">
+    <h2 id="t-prod">Productos</h2>
+    <p class="bajada">Se fabrican cuando los pedís. Precio y plazo te los pasamos por WhatsApp.</p>
+
+    <article class="producto">
+      <div class="fotos">
+        <img class="grande" src="static/web/pasado-por-roble/caja_abierta_roble_4x5.jpg" alt="Caja para 12 relojes abierta, con un reloj en cada almohadilla" width="1120" height="1400" loading="lazy">
+        <img class="chica" src="static/web/pasado-por-roble/caja_roble_4x5.jpg" alt="La misma caja cerrada, vista de frente" width="1120" height="1400" loading="lazy">
+        <img class="chica" src="static/web/pasado-por-roble/caja_abierta_roble_9x16.jpg" alt="Detalle de la caja abierta desde arriba" width="787" height="1400" loading="lazy">
+      </div>
+      <div>
+        <h3>Caja para 12 relojes</h3>
+        <p class="que">Doce lugares con almohadilla, tapa de vidrio para verlos sin abrir y marco dorado. Para coleccionistas o para quien quiere ordenar los relojes de todos los días.</p>
+        <ul class="datos">
+          <li><span>Capacidad</span><span>12 relojes</span></li>
+          <li><span>Color</span><span>Negro con detalles dorados</span></li>
+          <li><span>Tapa</span><span>Vidrio</span></li>
+          <li><span>Precio</span><span>Consultar</span></li>
+        </ul>
+        <a class="btn btn-roble" href="https://wa.me/5491165497234?text=Hola%2C%20quiero%20consultar%20por%20la%20caja%20para%2012%20relojes%20de%20Pasado%20por%20Roble" target="_blank" rel="noopener">Pedir la caja de relojes</a>
+        <p class="nota">Los relojes de las fotos no se venden: son para mostrar cómo se usa.</p>
+      </div>
+    </article>
+
+    <article class="producto invertido">
+      <div class="fotos horizontal">
+        <img src="static/web/pasado-por-roble/portapipas_roble_con_pipas_v2.jpg" alt="Portapipas negro con seis pipas de distintas formas apoyadas" width="1400" height="875" loading="lazy">
+        <img src="static/web/pasado-por-roble/portapipas_roble_vacio.jpg" alt="El portapipas vacío, para ver las seis ranuras" width="1400" height="875" loading="lazy">
+      </div>
+      <div>
+        <h3>Portapipas para 6</h3>
+        <p class="que">Seis ranuras para apoyar las pipas paradas, con la cazoleta abajo. Ordena el escritorio y deja que se aireen entre uso y uso.</p>
+        <ul class="datos">
+          <li><span>Capacidad</span><span>6 pipas</span></li>
+          <li><span>Color</span><span>Negro</span></li>
+          <li><span>Precio</span><span>Consultar</span></li>
+        </ul>
+        <a class="btn btn-roble" href="https://wa.me/5491165497234?text=Hola%2C%20quiero%20consultar%20por%20el%20portapipas%20de%20Pasado%20por%20Roble" target="_blank" rel="noopener">Pedir el portapipas</a>
+        <p class="nota">Las pipas no están incluidas.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="bloque ritual" aria-labelledby="t-ritual">
+  <div class="wrap">
+    <h2 id="t-ritual">Para regalar</h2>
+    <p class="bajada">Funcionan bien como regalo para el que tiene todo. Si querés una versión especial, contanos.</p>
+    <ul class="ideas">
+      <li><b>Regalo empresarial</b>Para clientes o fin de año. Consultá por cantidad.</li>
+      <li><b>Otra capacidad</b>Si necesitás más o menos lugares, vemos si se puede adaptar.</li>
+      <li><b>Combinado</b>Caja y portapipas juntos, para el escritorio completo.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cierre" aria-labelledby="t-cierre">
+  <div class="wrap">
+    <h2 id="t-cierre">¿Lo querés para vos o para regalar?</h2>
+    <p>Escribinos y te pasamos el precio y el plazo.</p>
+    <a class="btn btn-wa" href="https://wa.me/5491165497234?text=Hola%2C%20vi%20Pasado%20por%20Roble%20en%20el%20cat%C3%A1logo%20y%20quiero%20consultar" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Pasado por Roble es una línea de <a href="index.html">El Pasaje 3D Studio</a></span>
+    <a href="https://www.instagram.com/elpasaje.3d.studio/" target="_blank" rel="noopener">Instagram @elpasaje.3d.studio</a>
+  </div>
+</footer>
+
+</body>
+</html>
